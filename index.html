@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logitech MX Keys S | Teclado Avançado Sem Fio Master Series</title>
+  <meta name="description" content="Experimente o estado de flow supremo com o Logitech MX Keys S. Teclas côncavas de alta precisão, iluminação inteligente com sensor de proximidade, Smart Actions e construção premium em alumínio.">
+  
+  <!-- Preconnect to Logitech CDN and Fonts -->
+  <link rel="preconnect" href="https://resource.logitech.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#00F0A0',
+            'accent-cyan': '#00D2FF',
+            surface: '#090b0e',
+            elevated: '#101318',
+            ink: '#f3f5f8',
+            border: 'rgba(255, 255, 255, 0.08)'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-ink antialiased selection:bg-accent selection:text-black">
+
+  <!-- Ambient Backdrop Gradient -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="glow-orb glow-top"></div>
+    <div class="glow-orb glow-bottom"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-border/40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand & Product Title -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center font-bold text-white tracking-tighter group-hover:border-accent transition-colors">
+          MX
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Master Series</span>
+          <span class="text-base font-bold text-white tracking-tight -mt-1 group-hover:text-accent transition-colors">MX Keys S</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#experiencia" class="hover:text-white transition-colors">Experiência</a>
+        <a href="#teclas" class="hover:text-white transition-colors">Perfect Stroke</a>
+        <a href="#iluminacao" class="hover:text-white transition-colors">Iluminação Smart</a>
+        <a href="#automacao" class="hover:text-white transition-colors">Smart Actions</a>
+        <a href="#ecossistema" class="hover:text-white transition-colors">Multidispositivo</a>
+        <a href="#especificacoes" class="hover:text-white transition-colors">Ficha Técnica</a>
+      </nav>
+
+      <!-- CTA & Audio Switch -->
+      <div class="flex items-center gap-4">
+        <!-- Interactive Sound Toggle -->
+        <button id="soundToggle" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono border border-white/10 bg-white/5 hover:bg-white/10 text-zinc-300 transition-all" title="Simular som mecânico das teclas">
+          <span class="sound-wave-icon">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </span>
+          <span id="soundLabel">Som Tátil Ativo</span>
+        </button>
+
+        <a href="https://www.logitechstore.com.br/teclado-sem-fio-logitech-mx-keys-s-cinza-claro/?&utm_source=dtx&utm_medium=referral&utm_campaign=fy25q1_logi_npi_dtx_npi_url_pw_create-prod_mx-series_teclado&utm_term=site&utm_content=website-cta" target="_blank" rel="noopener noreferrer" class="btn-primary group">
+          <span>Comprar Agora</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- HERO PINNED SCROLL SECTION -->
+    <section id="heroScrollPin" class="relative w-full hero-scroll-pin-wrapper" style="height: 420vh;">
+      
+      <!-- STICKY FRAME LOCKED IN VIEWPORT -->
+      <div id="heroStickyFrame" class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between items-center px-6 pt-20 pb-8 select-none">
+        
+        <!-- Background Video Canvas with Vignettes -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#090b0e]">
+          <video id="heroExplosionVideo" 
+                 src="keyboard_explosion_all_keyframes.mp4" 
+                 class="w-full h-full object-cover md:object-contain transition-opacity duration-300 opacity-90" 
+                 playsinline 
+                 muted 
+                 preload="auto">
+          </video>
+          <!-- Radial vignette for seamless dark background integration -->
+          <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#090b0e] via-transparent to-[#090b0e]/80"></div>
+          <div class="absolute inset-0 pointer-events-none bg-radial-vignette"></div>
+        </div>
+
+        <!-- TOP BAR: Engineering Badge & Real-time Scrub Indicator -->
+        <div class="relative z-20 w-full max-w-7xl mx-auto flex items-center justify-between pt-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span class="text-xs uppercase tracking-wider text-zinc-300 font-mono">Master Series • Desconstrução Estrutural 3D</span>
+          </div>
+
+          <!-- Video Progress Indicator -->
+          <div class="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md text-xs font-mono">
+            <span class="text-zinc-400">Frame:</span>
+            <span id="videoTimeDisplay" class="text-accent font-bold">0.0s / 6.0s</span>
+            <div class="w-20 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+              <div id="videoProgressBar" class="h-full bg-accent transition-all duration-75" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE OVERLAYS (Choreographed by Scroll Position) -->
+        
+        <!-- PHASE 1: Hero Titles (Visible at 0% - 25% scroll) -->
+        <div id="heroPhaseTitle" class="relative z-20 text-center max-w-4xl mx-auto my-auto transition-all duration-300 pointer-events-none">
+          <h1 class="hero-title font-extrabold tracking-tight text-white mb-4">
+            Seu Flow no <span class="gradient-text">Modo Master</span>.
+          </h1>
+          <p class="hero-description text-zinc-300 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Uma obra-prima da engenharia. Role para desconstruir o Logitech MX Keys S camada por camada até a placa de aço maciço.
+          </p>
+
+          <!-- Scroll Down Mouse Prompt -->
+          <div class="mt-8 flex flex-col items-center gap-2 text-zinc-400 text-xs font-mono animate-bounce">
+            <div class="w-5 h-9 rounded-full border-2 border-accent/60 flex items-start justify-center p-1">
+              <div class="w-1.5 h-2.5 rounded-full bg-accent animate-pulse"></div>
+            </div>
+            <span class="tracking-widest uppercase text-[10px] text-accent">Role para desconstruir ↓</span>
+          </div>
+        </div>
+
+        <!-- PHASE 2: HUD Mechanical Layer Markers (Visible at 25% - 75% scroll) -->
+        <div id="heroHudMarkers" class="absolute inset-0 z-20 pointer-events-none max-w-7xl mx-auto px-6 flex items-center justify-between opacity-0 transition-opacity duration-300">
+          
+          <!-- Left Callouts (Switches & Keycaps) -->
+          <div class="space-y-6 max-w-xs text-left">
+            <div class="hud-card" id="hudKeycaps">
+              <div class="flex items-center gap-2 text-accent font-mono text-[11px] mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                <span>CAMADA 01 • TOPO</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Teclas Esféricas Côncavas</h4>
+              <p class="text-xs text-zinc-400 mt-1">Superfície moldada que centraliza as pontas dos dedos e minimiza erros de digitação.</p>
+            </div>
+
+            <div class="hud-card" id="hudScissor">
+              <div class="flex items-center gap-2 text-accent font-mono text-[11px] mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                <span>CAMADA 02 • MECÂNICA</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Mecanismo Scissor-Switch</h4>
+              <p class="text-xs text-zinc-400 mt-1">Amortecimento acústico com estabilidade superior. Resposta tátil silenciosa e imediata.</p>
+            </div>
+          </div>
+
+          <!-- Right Callouts (Sensors & Aluminum Chassis) -->
+          <div class="space-y-6 max-w-xs text-right">
+            <div class="hud-card ml-auto" id="hudSensors">
+              <div class="flex items-center justify-end gap-2 text-accent font-mono text-[11px] mb-1">
+                <span>CAMADA 03 • SENSORES</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Proximidade & Luz Ambiente</h4>
+              <p class="text-xs text-zinc-400 mt-1">Sensores que acendem as teclas quando as mãos se aproximam e adaptam o brilho aos lux do quarto.</p>
+            </div>
+
+            <div class="hud-card ml-auto" id="hudChassis">
+              <div class="flex items-center justify-end gap-2 text-accent font-mono text-[11px] mb-1">
+                <span>CAMADA 04 • BASE</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Placa de Aço Maciço (810g)</h4>
+              <p class="text-xs text-zinc-400 mt-1">Uma base sólida e pesada que ancora o teclado à mesa sem escorregar ou flexionar.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PHASE 3: Completion Metrics Bar (Visible at 75% - 100% scroll) -->
+        <div id="heroPhaseMetrics" class="relative z-20 w-full max-w-5xl mx-auto opacity-0 translate-y-4 transition-all duration-300">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-black/60 backdrop-blur-xl p-3 rounded-2xl border border-white/10 shadow-2xl">
+            <div class="p-3 text-left">
+              <div class="text-xl md:text-2xl font-mono font-bold text-white">810<span class="text-accent text-xs">g</span></div>
+              <div class="text-[11px] text-zinc-400">Placa de Aço Maciço</div>
+            </div>
+            <div class="p-3 text-left">
+              <div class="text-xl md:text-2xl font-mono font-bold text-white">1500<span class="text-accent text-xs">mAh</span></div>
+              <div class="text-[11px] text-zinc-400">Até 5 Meses Bateria</div>
+            </div>
+            <div class="p-3 text-left">
+              <div class="text-xl md:text-2xl font-mono font-bold text-white">3<span class="text-accent text-xs">x</span></div>
+              <div class="text-[11px] text-zinc-400">Easy-Switch Multi-OS</div>
+            </div>
+            <div class="p-3 text-left">
+              <div class="text-xl md:text-2xl font-mono font-bold text-white">10<span class="text-accent text-xs">m</span></div>
+              <div class="text-[11px] text-zinc-400">Logi Bolt™ & BLE</div>
+            </div>
+          </div>
+
+          <div class="text-center mt-3 text-xs font-mono text-zinc-400 flex items-center justify-center gap-2">
+            <span class="text-accent font-bold">✔ Desconstrução Completa</span>
+            <span>• Continue rolando para explorar o Estúdio e Recursos</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: STUDIO 360 & VARIANTS -->
+    <section id="experiencia" class="py-24 border-t border-border/40 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Estúdio de Design & Cores</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Construído com Precisão. Escolha seu Acabamento.
+            </h2>
+          </div>
+
+          <!-- Color Variant Selector -->
+          <div class="flex items-center gap-3 p-1.5 rounded-full bg-zinc-900 border border-white/10 backdrop-blur-lg self-start md:self-auto">
+            <button class="color-tab-btn active" data-color="graphite" data-sku="920-011563">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#2B2D30] border border-white/20"></span>
+              <span>Grafite</span>
+            </button>
+            <button class="color-tab-btn" data-color="pale-gray" data-sku="920-011564">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#E3E5E8] border border-white/20"></span>
+              <span>Cinza-Claro (Pale Gray)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive 3D/Angle Visualizer Studio -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-zinc-950/60 rounded-3xl border border-white/10 p-6 md:p-12 relative overflow-hidden">
+          
+          <!-- Perspective Viewer (Left/Top 8 cols) -->
+          <div class="lg:col-span-8 flex flex-col items-center justify-center relative min-h-[380px] md:min-h-[480px]">
+            <img id="studioViewerImg" 
+                 src="https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/product-gallery/graphite/mx-keys-s-keyboard-3qtr-graphite-us.png" 
+                 alt="Logitech MX Keys S Vista Angular" 
+                 class="max-h-[380px] w-auto object-contain transition-all duration-300 drop-shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
+
+            <!-- Angle Switcher Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-8 z-20">
+              <button class="angle-btn active" data-angle="3qtr">Perspectiva 3D</button>
+              <button class="angle-btn" data-angle="top">Visão Superior</button>
+              <button class="angle-btn" data-angle="side">Perfil Lateral (20,5mm)</button>
+              <button class="angle-btn" data-angle="bottom">Base Antiderrapante</button>
+            </div>
+          </div>
+
+          <!-- Specification / Details Panel (Right 4 cols) -->
+          <div class="lg:col-span-4 flex flex-col gap-6 lg:border-l lg:border-white/10 lg:pl-8">
+            <div class="border-b border-white/10 pb-6">
+              <span class="text-xs uppercase font-mono text-zinc-400 block mb-1">Modelo Selecionado</span>
+              <h3 id="studioModelTitle" class="text-2xl font-bold text-white">MX Keys S — Grafite</h3>
+              <p class="text-sm font-mono text-zinc-400 mt-1">Part Number (SKU): <span id="studioSku" class="text-accent">920-011563</span></p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="spec-bullet">
+                <div class="spec-bullet-icon">
+                  <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Teclas Esféricas Côncavas</h4>
+                  <p class="text-xs text-zinc-400 leading-relaxed">Desenho ergonômico anatômico que guia o impacto dos dedos para o centro de cada tecla, reduzindo desvios e erros de digitação.</p>
+                </div>
+              </div>
+
+              <div class="spec-bullet">
+                <div class="spec-bullet-icon">
+                  <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Iluminação Adaptativa de Fundo</h4>
+                  <p class="text-xs text-zinc-400 leading-relaxed">Acendimento automático instantâneo guiado por sensores capacitivos de aproximação das mãos e fotossensor de luminosidade ambiente.</p>
+                </div>
+              </div>
+
+              <div class="spec-bullet">
+                <div class="spec-bullet-icon">
+                  <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM4 10h16M10 4v16"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Alumínio de Baixo Carbono & PCR</h4>
+                  <p class="text-xs text-zinc-400 leading-relaxed" id="sustainabilityText">Construção com alumínio de baixo carbono na placa estrutural interna e 26% de plástico reciclado pós-consumo certificado.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price and Buy Link -->
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] font-mono text-zinc-400 block uppercase">Disponibilidade</span>
+                <span class="text-sm font-semibold text-accent flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Em Estoque Oficial
+                </span>
+              </div>
+              <a href="https://www.logitechstore.com.br/teclado-sem-fio-logitech-mx-keys-s-cinza-claro/?&utm_source=dtx&utm_medium=referral&utm_campaign=fy25q1_logi_npi_dtx_npi_url_pw_create-prod_mx-series_teclado&utm_term=site&utm_content=website-cta" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                Logitech Store BR ↗
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: PERFECT STROKE & INTERACTIVE KEY TESTING -->
+    <section id="teclas" class="py-24 border-t border-border/40 relative bg-zinc-950/40">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-mono uppercase tracking-widest text-accent">Engenharia Tátil • Perfect Stroke</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Digitação Fluida, Rápida e Silenciosamente Precisa.
+            </h2>
+            <p class="text-zinc-300 text-base md:text-lg leading-relaxed">
+              Cada tecla do MX Keys S foi esculpida com precisão milimétrica. O desenho côncavo esférico abraça naturalmente a polpa dos seus dedos, enquanto as bordas arredondadas oferecem um feedback tátil irrepreensível, não importa onde o dedo toque a tecla.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center text-xs font-mono shrink-0 mt-0.5">✓</div>
+                <p class="text-sm text-zinc-300"><strong class="text-white">Estabilidade Estrutural Unificada:</strong> Toda a arquitetura interna do teclado repousa sobre uma única placa metálica rígida que elimina qualquer flexão indesejada e reduz a ressonância oca.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center text-xs font-mono shrink-0 mt-0.5">✓</div>
+                <p class="text-sm text-zinc-300"><strong class="text-white">Mecanismo Tesoura Damped:</strong> Acionamento amortecido de perfil baixo que proporciona curso curto e resposta precisa com silêncio impecável para ambientes profissionais.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-accent/10 border border-accent/30 text-accent flex items-center justify-center text-xs font-mono shrink-0 mt-0.5">✓</div>
+                <p class="text-sm text-zinc-300"><strong class="text-white">Novas Teclas de Atalho Dedicadas:</strong> Tecla Ditado de Voz instantâneo, Tecla Emoji seletora e Atalho de Ativação/Mudo do Microfone.</p>
+              </div>
+            </div>
+
+            <!-- Virtual Interactive Key Stroke Playground -->
+            <div class="p-6 rounded-2xl bg-zinc-900/80 border border-white/10 mt-6">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono uppercase text-zinc-400">Laboratório de Teste Tátil (Clique ou Digite)</span>
+                <span class="text-xs font-mono text-accent" id="keyCounter">0 toques registrados</span>
+              </div>
+              
+              <!-- Virtual Key Row -->
+              <div class="flex flex-wrap gap-2 justify-center" id="virtualKeyboard">
+                <button class="interactive-key" data-key="q">Q</button>
+                <button class="interactive-key" data-key="w">W</button>
+                <button class="interactive-key" data-key="e">E</button>
+                <button class="interactive-key" data-key="r">R</button>
+                <button class="interactive-key" data-key="t">T</button>
+                <button class="interactive-key" data-key="y">Y</button>
+                <button class="interactive-key" data-key="u">U</button>
+                <button class="interactive-key" data-key="i">I</button>
+                <button class="interactive-key" data-key="o">O</button>
+                <button class="interactive-key" data-key="p">P</button>
+                <button class="interactive-key active-demo" data-key="space" style="min-width: 120px;">Espaço</button>
+                <button class="interactive-key" data-key="enter">Enter ↵</button>
+              </div>
+              
+              <div class="mt-4 text-center text-xs text-zinc-400 font-mono">
+                Sinta o som autêntico do scissor-switch calibrado em 44.1kHz via Web Audio API.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Feature Image with Macro Detail -->
+          <div class="lg:col-span-6 relative">
+            <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+              <img src="https://resource.logitech.com/w_952,h_560,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/logi-mx-keys-s-key-features-typing.jpg" 
+                   alt="Detalhe de digitação das teclas esféricas côncavas do MX Keys S" 
+                   class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                <div>
+                  <span class="px-2.5 py-1 rounded-md bg-accent/20 border border-accent/40 text-accent font-mono text-xs uppercase mb-2 inline-block">Perfect Stroke</span>
+                  <p class="text-white font-medium text-base">Moldado para a geometria natural dos dedos. Digitação contínua sem fadiga muscular.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SMART ILLUMINATION -->
+    <section id="iluminacao" class="py-24 border-t border-border/40 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Sensores de Presença e Luminosidade</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Iluminação que Antecipa sua Presença.
+          </h2>
+          <p class="text-zinc-300 text-base md:text-lg">
+            As teclas ganham vida no exato instante em que suas mãos se aproximam do teclado. Quando você se afasta, apagam-se suavemente para conservar energia para quando o flow voltar.
+          </p>
+        </div>
+
+        <!-- 2-Column Split: Interactive Lighting Lab & Feature Preview -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-white/10 relative group">
+            <img id="illuminationImg" 
+                 src="https://resource.logitech.com/w_952,h_560,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/logi-mx-keys-s-key-features-illumination.jpg" 
+                 alt="MX Keys S Iluminação Inteligente com sensor de mãos" 
+                 class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            
+            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-8 text-center">
+              <p class="text-white font-medium max-w-md">Sensores ópticos e capacitivos trabalham em conjunto com o Logi Options+ para calibrar o tempo de permanência da luz e o brilho por perfil.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Light Controller Simulator -->
+          <div class="lg:col-span-5 p-8 rounded-3xl bg-zinc-950/80 border border-white/10 flex flex-col gap-6">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <h3 class="text-lg font-bold text-white">Simulador de Iluminação</h3>
+              <span class="text-xs font-mono text-zinc-400">Logi Options+</span>
+            </div>
+
+            <!-- Hand Proximity Toggle Simulation -->
+            <div>
+              <label class="text-xs font-mono uppercase text-zinc-400 block mb-3">Simulação de Sensor de Mãos</label>
+              <div class="grid grid-cols-2 gap-3">
+                <button id="proximityNearBtn" class="px-4 py-3 rounded-xl border border-accent bg-accent/10 text-white font-medium text-xs flex items-center justify-center gap-2">
+                  <span>Mãos Perto (Acesa)</span>
+                </button>
+                <button id="proximityAwayBtn" class="px-4 py-3 rounded-xl border border-white/10 bg-zinc-900 text-zinc-400 font-medium text-xs flex items-center justify-center gap-2">
+                  <span>Mãos Longe (Apagada)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Manual Brightness Slider -->
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono mb-2">
+                <span class="text-zinc-400">Intensidade dos LEDs</span>
+                <span id="sliderValueText" class="text-accent font-bold">85%</span>
+              </div>
+              <input type="range" id="brightnessSlider" min="0" max="100" value="85" class="w-full accent-accent bg-zinc-800 rounded-lg cursor-pointer h-2">
+            </div>
+
+            <!-- Ambient Lighting Mode Radio -->
+            <div class="space-y-2 pt-2">
+              <span class="text-xs font-mono uppercase text-zinc-400 block">Condição de Luz Ambiente</span>
+              <div class="grid grid-cols-3 gap-2">
+                <button class="ambient-btn" data-ambient="dark">Noite (Escuro)</button>
+                <button class="ambient-btn active" data-ambient="studio">Estúdio (Ideal)</button>
+                <button class="ambient-btn" data-ambient="bright">Luz Solar</button>
+              </div>
+            </div>
+
+            <!-- Battery Impact Readout -->
+            <div class="p-4 rounded-xl bg-zinc-900/60 border border-white/5 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-400">Estimativa de Duração:</span>
+              <span id="batteryEstimate" class="text-accent font-bold">10 Dias com Luz Contínua</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SMART ACTIONS AUTOMATION PLAYGROUND -->
+    <section id="automacao" class="py-24 border-t border-border/40 relative bg-zinc-950/60">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="max-w-3xl">
+            <span class="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Logi Options+ • Smart Actions</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Automatize Tarefas Repetitivas com 1 Único Toque.
+            </h2>
+            <p class="text-zinc-300 text-base md:text-lg mt-4">
+              As Smart Actions no aplicativo Logi Options+ funcionam como macros inteligentes que executam sequências complexas de ações, abrindo aplicativos, preenchendo prompts ou silenciando chamadas instantaneamente.
+            </p>
+          </div>
+
+          <a href="https://www.logitech.com/pt-br/software/logi-options-plus.html" target="_blank" rel="noopener noreferrer" class="btn-secondary self-start md:self-auto">
+            Conhecer Logi Options+ ↗
+          </a>
+        </div>
+
+        <!-- Interactive Automation Workbench -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Macro Selector Cards (Left 5 cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            
+            <div class="macro-card active" data-macro="coding">
+              <div class="flex items-center justify-between mb-2">
+                <span class="macro-badge font-mono">Tecla F1 • Dev Flow</span>
+                <span class="text-xs font-mono text-accent">4 Ações Simultâneas</span>
+              </div>
+              <h4 class="text-base font-bold text-white">Ambiente de Programação</h4>
+              <p class="text-xs text-zinc-400 mt-1">Abre o editor VS Code, inicia container Docker, abre Terminal zsh e toca playlist Lo-Fi.</p>
+            </div>
+
+            <div class="macro-card" data-macro="meeting">
+              <div class="flex items-center justify-between mb-2">
+                <span class="macro-badge font-mono">Tecla F2 • Modo Reunião</span>
+                <span class="text-xs font-mono text-accent">3 Ações Simultâneas</span>
+              </div>
+              <h4 class="text-base font-bold text-white">Pronto para a Reunião</h4>
+              <p class="text-xs text-zinc-400 mt-1">Abre o Google Meet / Zoom, silencia o microfone e ativa o modo Não Perturbe no SO.</p>
+            </div>
+
+            <div class="macro-card" data-macro="creative">
+              <div class="flex items-center justify-between mb-2">
+                <span class="macro-badge font-mono">Tecla F3 • Design Sprint</span>
+                <span class="text-xs font-mono text-accent">4 Ações Simultâneas</span>
+              </div>
+              <h4 class="text-base font-bold text-white">Workspace de Design</h4>
+              <p class="text-xs text-zinc-400 mt-1">Abre Figma na tela principal, inicia paleta de referências e minimiza navegadores secundários.</p>
+            </div>
+
+          </div>
+
+          <!-- Interactive Live Automation Execution Terminal (Right 7 cols) -->
+          <div class="lg:col-span-7 rounded-3xl bg-zinc-950 border border-white/10 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden font-mono shadow-2xl">
+            
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                <span class="text-xs text-zinc-500 ml-2">logi-smart-actions-engine.daemon</span>
+              </div>
+              <button id="triggerMacroBtn" class="btn-primary py-1.5 px-4 text-xs">
+                <span>Disparar Macro (F1)</span>
+              </button>
+            </div>
+
+            <!-- Terminal Output Stream -->
+            <div class="my-6 space-y-3 min-h-[200px]" id="terminalOutput">
+              <div class="text-xs text-zinc-500">[08:46:12] Daemon inicializado. Aguardando comando Smart Action...</div>
+              <div class="text-xs text-zinc-400 flex items-center gap-2">
+                <span class="text-accent">❯</span> <span>MX Keys S conectado via Logi Bolt Receiver (Criptografia AES-128 FIPS)</span>
+              </div>
+              <div class="text-xs text-zinc-300 flex items-center gap-2">
+                <span class="text-accent">❯</span> <span>Clique em "Disparar Macro" para simular a execução em cascata de tarefas.</span>
+              </div>
+            </div>
+
+            <!-- Step Progress Visualizer -->
+            <div class="border-t border-white/10 pt-4">
+              <div class="flex items-center justify-between text-xs text-zinc-400 mb-2">
+                <span>Status da Automação</span>
+                <span id="macroStatusText" class="text-accent">Pronto</span>
+              </div>
+              <div class="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden">
+                <div id="macroProgressBar" class="h-full bg-accent transition-all duration-300 w-0"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: ECOSYSTEM, EASY-SWITCH & LOGI BOLT -->
+    <section id="ecossistema" class="py-24 border-t border-border/40 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 relative order-2 lg:order-1">
+            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
+              <img src="https://resource.logitech.com/w_952,h_560,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/logi-mx-keys-s-key-features-easy-switch.jpg" 
+                   alt="Logitech MX Keys S alternando entre 3 monitores e sistemas operacionais" 
+                   class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+              
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-zinc-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs font-mono">
+                <div class="flex items-center gap-2 text-white">
+                  <span class="w-2 h-2 rounded-full bg-accent"></span>
+                  <span>Canal Atual: <span id="activeChannel" class="text-accent font-bold">1 (MacBook Pro)</span></span>
+                </div>
+                <span class="text-zinc-400">Latência: &lt; 1.2ms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-6 order-1 lg:order-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-accent">Multidispositivo • Multi-OS</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Um Teclado. Três Mundos. Transição Instantânea.
+            </h2>
+            <p class="text-zinc-300 text-base md:text-lg leading-relaxed">
+              Emparelhe o MX Keys S com até 3 computadores ou tablets diferentes e alterne entre eles com o toque de uma única tecla Easy-Switch (1, 2 ou 3).
+            </p>
+
+            <!-- Easy-Switch Interactive Device Selector -->
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <button class="device-pill active" data-channel="1" data-device="mac">
+                <span class="device-badge">Canal 1</span>
+                <span class="font-bold text-white text-sm block mt-1">macOS</span>
+                <span class="text-[11px] text-zinc-400">MacBook Pro M3</span>
+              </button>
+              <button class="device-pill" data-channel="2" data-device="windows">
+                <span class="device-badge">Canal 2</span>
+                <span class="font-bold text-white text-sm block mt-1">Windows 11</span>
+                <span class="text-[11px] text-zinc-400">Workstation PC</span>
+              </button>
+              <button class="device-pill" data-channel="3" data-device="ipad">
+                <span class="device-badge">Canal 3</span>
+                <span class="font-bold text-white text-sm block mt-1">iPadOS / Linux</span>
+                <span class="text-[11px] text-zinc-400">iPad Pro / Ubuntu</span>
+              </button>
+            </div>
+
+            <!-- Logitech Flow Synergy Callout -->
+            <div class="p-5 rounded-2xl bg-zinc-900/60 border border-white/10 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Sinergia Completa com o MX Master 3S</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed mt-1">
+                  Combine com o mouse MX Master 3S usando a tecnologia <strong class="text-white">Logitech Flow</strong>. Mova o cursor do mouse entre diferentes computadores — o teclado MX Keys S acompanha automaticamente a tela ativa, permitindo inclusive copiar e colar textos e arquivos entre Windows e Mac sem fios.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SUSTAINABILITY & RESPONSIBLE DESIGN -->
+    <section class="py-24 border-t border-border/40 relative bg-zinc-950/40">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Design para a Sustentabilidade</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Alto Desempenho. Projetado de Forma Responsável.
+          </h2>
+          <p class="text-zinc-300 text-base md:text-lg">
+            A Logitech foi uma das primeiras fabricantes do mundo a incluir rótulos de impacto de carbono transparentes em suas embalagens. Conheça as métricas que tornam o MX Keys S uma escolha consciente.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-8 rounded-3xl bg-zinc-900/50 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="text-3xl font-mono font-bold text-accent mb-2">15,87 <span class="text-sm text-zinc-400">kg CO₂e</span></div>
+              <h3 class="text-lg font-bold text-white mb-2">Pegada de Carbono Certificada</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Todas as emissões de carbono do ciclo de vida completo do produto são quantificadas e compensadas através de programas certificados de restauração florestal e energia limpa.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/5 text-xs font-mono text-zinc-400">
+              Rótulo de impacto verificado
+            </div>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-zinc-900/50 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="text-3xl font-mono font-bold text-accent mb-2">26% <span class="text-sm text-zinc-400">PCR Plástico</span></div>
+              <h3 class="text-lg font-bold text-white mb-2">Plástico Reciclado Pós-Consumo</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                O modelo na cor Grafite utiliza 26% de plásticos reciclados certificados para dar nova vida a materiais eletrônicos descartados (11% na versão Cinza-claro), reduzindo a extração de matérias virgens.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/5 text-xs font-mono text-zinc-400">
+              Next Life Plastics Certificado
+            </div>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-zinc-900/50 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="text-3xl font-mono font-bold text-accent mb-2">FSC™ <span class="text-sm text-zinc-400">Paper</span></div>
+              <h3 class="text-lg font-bold text-white mb-2">Embalagem 100% Responsável</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Todo o papel de embalagem provém exclusivamente de florestas com manejo sustentável certificado pelo FSC™, garantindo preservação de biomas e eliminação de plásticos de uso único.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/5 text-xs font-mono text-zinc-400">
+              Forest Stewardship Council
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: COMPLETE TECHNICAL SPECIFICATIONS -->
+    <section id="especificacoes" class="py-24 border-t border-border/40 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-accent mb-3 block">Dados Técnicos Oficiais</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Especificações e Dimensões Oficiais.
+            </h2>
+          </div>
+          <span class="text-xs font-mono text-zinc-400">Logitech Global Engineering Document</span>
+        </div>
+
+        <!-- Specifications Table -->
+        <div class="rounded-3xl bg-zinc-950/80 border border-white/10 overflow-hidden shadow-2xl">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10 bg-zinc-900/40">
+            <div class="p-6">
+              <span class="text-xs font-mono text-zinc-400 uppercase">Dimensões do Teclado</span>
+              <div class="text-white font-bold text-lg mt-2">131,63 x 430,2 x 20,5 mm</div>
+              <div class="text-xs text-zinc-400 font-mono mt-1">Altura x Largura x Espessura</div>
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-mono text-zinc-400 uppercase">Massa Estrutural</span>
+              <div class="text-white font-bold text-lg mt-2">810 gramas</div>
+              <div class="text-xs text-zinc-400 font-mono mt-1">Placa rígida de estabilidade</div>
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-mono text-zinc-400 uppercase">Receptor Logi Bolt</span>
+              <div class="text-white font-bold text-lg mt-2">6,11 x 14,4 x 18,65 mm</div>
+              <div class="text-xs text-zinc-400 font-mono mt-1">Peso: 1,68g (USB Tipo A)</div>
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-mono text-zinc-400 uppercase">Garantia Logitech</span>
+              <div class="text-white font-bold text-lg mt-2">1 Ano Limitada</div>
+              <div class="text-xs text-zinc-400 font-mono mt-1">Suporte oficial no Brasil</div>
+            </div>
+          </div>
+
+          <!-- Detailed Specs Accordion Grid -->
+          <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+            
+            <div class="space-y-4">
+              <h4 class="text-base font-bold text-white border-b border-white/10 pb-2">Bateria e Alimentação</h4>
+              <ul class="space-y-3 text-zinc-300">
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Tipo de Bateria</span>
+                  <span class="font-mono text-white">Li-Po Recarregável (1500 mAh)</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Duração com Iluminação</span>
+                  <span class="font-mono text-white">Até 10 dias de uso</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Duração sem Luz de Fundo</span>
+                  <span class="font-mono text-white">Até 5 meses contínuos</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Conector de Carga</span>
+                  <span class="font-mono text-white">USB Tipo C (Cabo incluso)</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-zinc-400">Chave Liga/Desliga Física</span>
+                  <span class="font-mono text-white">Sim, interruptor lateral</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-base font-bold text-white border-b border-white/10 pb-2">Conectividade & Sensores</h4>
+              <ul class="space-y-3 text-zinc-300">
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Protocolos Sem Fio</span>
+                  <span class="font-mono text-white">Logi Bolt USB + Bluetooth® Low Energy</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Alcance Sem Fio</span>
+                  <span class="font-mono text-white">Até 10 metros sem barreiras</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Sensores Embutidos</span>
+                  <span class="font-mono text-white">Proximidade das mãos + Luz Ambiente</span>
+                </li>
+                <li class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Easy-Switch</span>
+                  <span class="font-mono text-white">Conecta até 3 dispositivos simultâneos</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-zinc-400">Software Suportado</span>
+                  <span class="font-mono text-white">Logi Options+ (Win/Mac), Logi Tune</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-base font-bold text-white border-b border-white/10 pb-2">Compatibilidade de Sistemas</h4>
+              <ul class="space-y-2 text-xs text-zinc-400 leading-relaxed">
+                <li><strong class="text-white">Windows®:</strong> 10, 11 ou posterior (Suporte completo a Smart Actions e Flow)</li>
+                <li><strong class="text-white">macOS:</strong> 10.15 ou posterior (Compatível com FileVault via receptor Logi Bolt)</li>
+                <li><strong class="text-white">Linux®, ChromeOS e Googlebook:</strong> Funções básicas de digitação garantidas plug-and-play</li>
+                <li><strong class="text-white">iPadOS & Android™:</strong> iPadOS 14+ / Android 8.0+ via Bluetooth®</li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-base font-bold text-white border-b border-white/10 pb-2">Conteúdo da Embalagem</h4>
+              <ul class="space-y-2 text-xs text-zinc-300">
+                <li class="flex items-center gap-2">
+                  <span class="text-accent">✓</span> Teclado sem fio avançado MX Keys S
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-accent">✓</span> Receptor USB Logi Bolt™ seguro
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-accent">✓</span> Cabo de carregamento USB-C (USB-A para USB-C)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-accent">✓</span> Documentação e certificado de garantia oficial
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FINAL CTA -->
+    <section class="py-24 border-t border-border/40 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
+          <span class="text-xs uppercase tracking-wider text-accent font-mono">Pronto para Elevar seu Setup</span>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+          Domine o seu Flow com o <br><span class="gradient-text">Logitech MX Keys S</span>.
+        </h2>
+
+        <p class="text-zinc-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+          Disponível nas cores Grafite e Cinza-Claro com frete rápido e garantia nacional oficial de 1 ano.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://www.logitechstore.com.br/teclado-sem-fio-logitech-mx-keys-s-cinza-claro/?&utm_source=dtx&utm_medium=referral&utm_campaign=fy25q1_logi_npi_dtx_npi_url_pw_create-prod_mx-series_teclado&utm_term=site&utm_content=website-cta" target="_blank" rel="noopener noreferrer" class="btn-primary px-8 py-4 text-base w-full sm:w-auto">
+            <span>Comprar na Loja Oficial Logitech</span>
+            <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="#especificacoes" class="btn-secondary px-8 py-4 text-base w-full sm:w-auto">
+            Revisar Ficha Completa
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/60 py-12 relative z-10 text-xs text-zinc-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-6 h-6 rounded bg-zinc-800 border border-white/10 flex items-center justify-center font-bold text-white text-[11px]">
+          MX
+        </div>
+        <span>Logitech Master Series • MX Keys S</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="https://support.logi.com/hc/pt-br?mID=1665" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Suporte Oficial</a>
+        <a href="https://www.logitech.com/pt-br/software/logi-options-plus.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Download Logi Options+</a>
+        <a href="https://www.logitech.com/pt-br/planet-and-people/everything-matters" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Sustentabilidade</a>
+        <a href="https://www.logitechstore.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Logi Loja Brasil</a>
+      </div>
+
+      <div class="text-zinc-400 font-mono text-[11px]">
+        Desenvolvido com diretrizes Taste-Skill v2
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
